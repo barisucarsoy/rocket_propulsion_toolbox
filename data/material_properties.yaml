@@ -1,0 +1,82 @@
+description: "Material properties for various metals including thermal conductivity, yield strength, thermal expansion coefficient, and specific heat capacity."
+
+materials:
+  inconel_718:
+    description: "Nickel-chromium alloy known for high strength and corrosion resistance at high temperatures."
+    source: "Specify data source, e.g., Manufacturer datasheet, Material database XYZ, Publication DOI"
+    properties:
+      thermal_conductivity:
+        temperatures: [298.15, 773.15]
+        temperature_unit: K
+        values: [11.4, 18.5]
+        unit: W/(m*K) # Unit for the 'values' array
+      yield_strength:
+        temperatures: [298.15, 923.15]
+        temperature_unit: K
+        values: [1.035e9, 8.95e8]
+        unit: Pa # Unit for the 'values' array
+      thermal_expansion_coefficient: # Represents average coefficient over the range
+        unit: 1/K # Unit for the 'value' field within 'data'
+        data:
+          - temperature_range: "293.15-373.15" # Units implicitly K based on context/standard
+            value: 1.30e-5
+          - temperature_range: "293.15-773.15" # Units implicitly K
+            value: 1.47e-5
+      specific_heat_capacity:
+        temperatures: [298.15, 773.15]
+        temperature_unit: K
+        values: [435, 540]
+        unit: J/(kg*K) # Unit for the 'values' array
+
+  steel_316L:
+    description: "Austenitic stainless steel with low carbon content, known for corrosion resistance."
+    source: "Specify data source"
+    properties:
+      thermal_conductivity:
+        temperatures: [373.15, 773.15]
+        temperature_unit: K
+        values: [16.3, 21.5]
+        unit: W/(m*K)
+      yield_strength:
+        temperatures: [293.15, 773.15]
+        temperature_unit: K
+        values: [1.70e8, 1.10e8]
+        unit: Pa
+      thermal_expansion_coefficient: # Represents average coefficient over the range
+        unit: 1/K
+        data:
+          - temperature_range: "273.15-373.15" # Units implicitly K
+            value: 1.59e-5
+          - temperature_range: "273.15-773.15" # Units implicitly K
+            value: 1.75e-5
+      specific_heat_capacity:
+        temperatures: [373.15, 773.15]
+        temperature_unit: K
+        values: [500, 570]
+        unit: J/(kg*K)
+  al7075_t6:
+    description: "Aluminum alloy with zinc as the primary alloying element, T6 temper indicates solution heat-treated and artificially aged."
+    source: "Specify data source"
+    properties:
+      thermal_conductivity:
+        temperatures: [298.15, 473.15]
+        temperature_unit: K
+        values: [130, 155]
+        unit: W/(m*K)
+      yield_strength:
+        temperatures: [298.15, 423.15]
+        temperature_unit: K
+        values: [5.03e8, 4.40e8]
+        unit: Pa
+      thermal_expansion_coefficient: # Represents average coefficient over the range
+        unit: 1/K
+        data:
+          - temperature_range: "293.15-373.15" # Units implicitly K
+            value: 2.36e-5
+      specific_heat_capacity:
+        temperatures: [298.15]
+        temperature_unit: K
+        values: [960]
+        unit: J/(kg*K)
+
+# Add other metals following the same structure

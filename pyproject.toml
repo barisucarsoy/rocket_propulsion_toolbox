@@ -1,0 +1,71 @@
+[project]
+name = "rocket-propulsion-toolbox"
+version = "0.0.1"
+description = "A toolbox for rocket propulsion calculations." # Fill this in!
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" } # Choose your license
+authors = [
+    { name = "Barış Uçarsoy", email = "x" },
+]
+keywords = ["propulsion", "aerospace", "engineering", "toolbox"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License", # Match your chosen license
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "cantera",
+    "plotly",
+    "coolprop",
+    "PyYaml",
+    "pint",
+    "rich",
+    "scipy",
+    "rocketcea",
+    "rocketpy",
+    "build123d",
+    "ocp-vscode",
+    "fluids>=1.1.0",
+    "hydra-core",
+    "textual",
+    "textual-dev",
+    "rocketisp",
+    "notebook>=7.4.2",
+    "hydra-core",
+    "bokeh",
+    "black>=25.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.8",
+]
+
+[tool.black]
+line-length = 120
+
+#[project.urls]
+#Repository = "https://github.com/your-username/propulsion-toolbox" # Update URL
+
+#[project.optional-dependencies]
+#test = [
+#    "pytest",
+#]
+#dev = [
+#    "rocket-propulsion-toolbox[test]",
+#    "black",
+#    "ruff",
+#]
+
+# If you have command-line scripts:
+# [project.scripts]
+# propulsion-cli = "propulsion_toolbox.cli:main"
+
+# You might also need build system configuration, e.g., for setuptools or hatch
+#[build-system]
+#requires = ["setuptools>=61.0"]
+#build-backend = "setuptools.build_meta"

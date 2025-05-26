@@ -1,0 +1,56 @@
+description: Input file for the simulation. All values must be in SI units.
+
+propellants:
+  fuel:
+    name: ["ethanol"]
+    identifier: ["C2H5OH"]
+  oxidiser:
+    name: ["nitrous_oxide"]
+    identifier: ["N2O"]
+
+design_point: # Design point for the engine, one of the following:
+  throat_diameter: 20e-3 # [m] - [mm]*1e-3
+  mass_flow_rate: 1 # [kg/s] - Mass flow rate of the propellants
+  target_thrust: 1000 # [N] - Thrust of the engine
+
+conditions:
+  combustion_pressure: 20e5 # [Pa] - [bar]*1e5
+  initial_temperature: 298 # [K] - [C]+273.15
+  exit_pressure: 1e5 # [Pa] - [bar]*1e5
+  of_ratio: 2.0 # [-] - Oxidizer to fuel ratio
+
+thrust_chamber:
+    chamber_diameter: 150e-3 # [m] - [mm]*1e-3
+    characteristic_length: 1.0 # [m]
+
+material:
+  chamber:
+    name: "inconel_718"
+
+cooling:
+  film_cooling:
+    type: "film_cooling"
+    coolant: "ethanol"
+
+  regenerative_cooling:
+    type: "regenerative_cooling"
+    coolant: "ethanol"
+
+  radiative_cooling:
+    type: "radiative_cooling"
+
+injector:
+  showerhead:
+    type: "showerhead"
+    hole_dia_fuel: 1.0e-3 # [m] - [mm]*1e-3
+    hole_dia_oxidizer: 1.0e-3 # [m] - [mm]*1e-3
+    hole_num_fuel: 10 # [-] - Number of holes for fuel
+    hole_num_oxidizer: 10 # [-] - Number of holes for oxidizer
+    cd_fuel: 0.9 # [-] - Discharge coefficient for fuel
+    cd_oxidizer: 0.9 # [-] - Discharge coefficient for oxidizer
+
+  co-axial:
+    type: "co-axial"
+
+  pintle:
+    type: "pintle"
