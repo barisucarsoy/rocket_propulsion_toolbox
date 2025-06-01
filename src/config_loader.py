@@ -3,12 +3,9 @@ import os
 import sys
 from typing import Dict, Any
 
-import os
-import sys
-from typing import Dict, Any
 
 # --- Configuration ---
-CONFIG_FILENAME = 'input.yaml'  # Name of the YAML config file expected in src/
+CONFIG_FILENAME = 'methalox.yaml'  # Name of the YAML config file expected in src/
 
 # --- Determine Config Path ---
 # Get the directory containing *this* __init__.py file (which is the src directory)
@@ -52,4 +49,4 @@ except (FileNotFoundError, TypeError, ValueError, Exception) as e: # Catch speci
     # Handle critical configuration loading errors by exiting
     print(f"[Config Init] CRITICAL ERROR: Failed to load or validate configuration '{CONFIG_FILENAME}'.", file=sys.stderr)
     print(f"Error Details: {e}", file=sys.stderr)
-    sys.exit(f"Exiting due to configuration error.") # Exit the application
+    sys.exit("Exiting due to configuration error.") # Exit the application

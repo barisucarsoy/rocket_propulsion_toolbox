@@ -62,4 +62,4 @@ class Performance:
 
 if __name__ == "__main__":
     # Example usage
-    performance_instance = Performance().ideal_performance
+    performance_instance = Performance().ideal_performance()
