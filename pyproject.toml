@@ -19,7 +19,6 @@ classifiers = [
 ]
 dependencies = [
     "cantera",
-    "plotly",
     "coolprop",
     "PyYaml",
     "pint",
@@ -38,6 +37,9 @@ dependencies = [
     "hydra-core",
     "bokeh",
     "black>=25.1.0",
+    "plotly",
+    "pydantic"
+
 ]
 
 [dependency-groups]
