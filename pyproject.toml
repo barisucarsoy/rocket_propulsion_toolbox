@@ -36,20 +36,9 @@ dependencies = [
     "notebook>=7.4.2",
     "hydra-core",
     "bokeh",
-    "black>=25.1.0",
     "plotly",
     "pydantic"
-
 ]
-
-[dependency-groups]
-dev = [
-    "ruff>=0.11.8",
-]
-
-[tool.black]
-line-length = 120
-
 #[project.urls]
 #Repository = "https://github.com/your-username/propulsion-toolbox" # Update URL
 

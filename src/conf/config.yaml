@@ -1,0 +1,28 @@
+engine:
+  fuel: CH4
+  oxidizer: O2
+
+  inlet_conditions:
+    pressure:
+      value: 10
+      unit:  bar
+    temperature:
+      value: 300
+      unit:  K
+    ROF: 3.1
+
+  design_criteria: # Only one is selectable, defines the design point
+    thrust:
+      value: 1
+      unit: kN
+    throat_dia:
+      value: 10
+      unit: mm
+    mass_flow:
+      value: 100
+      unit: g/s
+
+  outlet_conditions:
+    pressure:
+      value: 1
+      unit: atm
