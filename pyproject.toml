@@ -37,7 +37,8 @@ dependencies = [
     "hydra-core",
     "bokeh",
     "plotly",
-    "pydantic"
+    "pydantic",
+    "sfepy>=2025.2",
 ]
 #[project.urls]
 #Repository = "https://github.com/your-username/propulsion-toolbox" # Update URL

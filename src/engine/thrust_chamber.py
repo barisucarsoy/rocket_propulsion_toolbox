@@ -2,6 +2,7 @@ import hydra
 from cantera.cti2yaml import ideal_gas
 from omegaconf import DictConfig
 from rich.console import Console
+from rich.markup import render
 from rich.table import Table
 from rich.panel import Panel
 from rich.columns import Columns
@@ -97,7 +98,7 @@ class ThrustChamber:
         """
         Adiabatic combustion of the fuel and oxidizer.
         """
-        gas_adiabatic = ct.Solution("gri30.yaml")
+        gas_adiabatic = ct.Solution("gri30_highT.yaml")
 
         # Strip Pint units → floats expected by Cantera
         T = self.T_inlet.m_as("K")   # kelvin
@@ -256,9 +257,9 @@ class ThrustChamber:
         gas.SP = s0, p0
 
         if show_plot:
-            fig.show()
+            fig.show(renderer="browser")
 
-        return data, fig
+        return None
     
     def results(self):
         table = Table(title="[bold green]Thrust Chamber Summary & Results[/bold green]", box=None)
